@@ -1,4 +1,4 @@
-import java.swing.*;
+import javax.swing.*;
 import java.awt.event.*;
 
 public class GUI extends JFrame{
@@ -8,7 +8,7 @@ public class GUI extends JFrame{
         setSize(300, 300);
         setLayout(null);
 
-        JButton = new JButton ("click me");
+        JButton jButton = new JButton ("click me");
     }
 
     
