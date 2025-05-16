@@ -3,18 +3,21 @@ public class Question {
     private String question;
     private String[] answerChoices;   
     private int seconds;
+    private String correct;
 
-    public Question (String stimulus, String question, String[] answerChoices) {
+    public Question (String stimulus, String question, String[] answerChoices, String correct) {
         this.stimulus = stimulus;
         this.question = question;
         this.answerChoices = answerChoices;
         this.seconds = 60;
+        this.correct = correct;
     }
-    public Question (String question, String[] answerChoices) {
+    public Question (String question, String[] answerChoices, String correct) {
         stimulus = null;
         this.question = question;
         this.answerChoices = answerChoices;
         this.seconds = 60;
+        this.correct = correct;
     }
     
 
@@ -42,10 +45,24 @@ public class Question {
         this.answerChoices = answerChoices;
     }
     public String toString(){
-        System.out.println(stimulus + "\n" + question);
-        for(int i = 0; i < answerChoices.length; i++){
-            
+        String temp = "";
+        if (stimulus != null){
+            temp = stimulus + "\n" + question;
         }
+        else{
+            temp = question;
+        }
+        for(int i = 0; i < answerChoices.length; i++){
+            temp = temp + "\n" + answerChoices[i];
+        }
+        return temp;
+    }
+
+    public boolean isCorrect(String userInput){
+        if((userInput.equals(correct.toLowerCase())) || (userInput.equals(correct.toUpperCase()))){
+            return true;
+        }
+        return false;
     }
 
 }
