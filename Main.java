@@ -271,11 +271,23 @@ public class Main {
         // period 4 (1945 - present)
 
                 //testing code below
-        int testererer = 14;
-        System.out.println("\n"+questionsP1.get(testererer)+"\n");
-        System.out.println("user input: ");
-        Scanner testScanner = new Scanner(System.in);
-        String testInput = testScanner.nextLine();
-        System.out.println(questionsP1.get(testererer).isCorrect(testInput));
+
+        //questionsP1.add(new Question(null, tempAnswers, "A"));
+        //questionsP1.get(15).setSeconds(1);
+        
+        // int testererer = 15;
+        // System.out.println("\n"+questionsP1.get(testererer)+"\n");
+        // System.out.println("user input: ");
+        // long startTime = System.currentTimeMillis();
+        // Scanner testScanner = new Scanner(System.in);
+        // String testInput = testScanner.nextLine();
+
+        // long elapsedTime = System.currentTimeMillis() - startTime;
+        // long elapsedSeconds = elapsedTime / 1000;
+        // boolean correct = questionsP1.get(testererer).isCorrect(testInput);
+        // boolean inTime = questionsP1.get(testererer).withinTime(elapsedSeconds);
+
+        // System.out.println(elapsedSeconds + "s elapsed for you to answer\n");
+        // questionsP1.get(testererer).result(elapsedSeconds, testInput);
     }
 }

@@ -44,6 +44,11 @@ public class Question {
     public void setAnswerChoices(String[] answerChoices) {
         this.answerChoices = answerChoices;
     }
+
+    public void setSeconds(int seconds){
+        this.seconds = seconds;
+    }
+
     public String toString(){
         String temp = "";
         if (stimulus != null){
@@ -65,4 +70,25 @@ public class Question {
         return false;
     }
 
+    public boolean withinTime(long secondsTaken){
+        if(secondsTaken > seconds){
+            return false;
+        }
+        return true;
+    }
+
+    public void result(long secondsTake, String userInput){
+        if(withinTime(secondsTake) && isCorrect(userInput)){
+            System.out.println("Correct and in Time!");
+        }
+        else if(isCorrect(userInput) && !withinTime(secondsTake)){
+            System.out.println("You are right but, you need to be quicker on the ap test");
+        }
+        else if(!isCorrect(userInput) && withinTime(secondsTake)){
+            System.out.println("You were wrong but... atleast you were right quickly");
+        }
+        else{
+            System.out.println("You were wrong and slow... atleast you are improving!");
+        }
+    }
 }
